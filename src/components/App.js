@@ -27,7 +27,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <h1>Hello world</h1> */}
       <Home posts={posts} />
     </div>
   );

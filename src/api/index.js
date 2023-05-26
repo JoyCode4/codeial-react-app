@@ -50,3 +50,4 @@ export const getPosts = (page = 1, limit = 5) => {
     method: 'GET',
   });
 };
+
