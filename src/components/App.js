@@ -9,8 +9,8 @@ function App() {
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await getPosts();
-      console.log(response.data.posts);
-      console.log('response', response);
+      // console.log(response.data.posts);
+      // console.log('response', response);
       if(response.success){
         setPosts(response.data.posts);
       }
@@ -26,7 +26,7 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      {/* <h1>Hello world</h1> */}
       <Home posts={posts} />
     </div>
   );
