@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import styles from "../styles/home.module.css";
-import {Comment} from "./index";
+import {Comment} from "../components/index";
 
 const Home = ({posts})=>{
     return (
@@ -26,7 +26,7 @@ const Home = ({posts})=>{
                             src="https://img.icons8.com/ios-glyphs/30/hearts.png"
                             alt="comments-icon"
                         />
-                        <span>5</span>
+                        <span>{post.likes.length}</span>
                         </div>
 
                         <div className={styles.postCommentsIcon}>
@@ -34,14 +34,18 @@ const Home = ({posts})=>{
                             width="24" height="24" src="https://img.icons8.com/material-outlined/24/comments--v1.png"
                             alt="comments--v1"
                         />
-                        <span>2</span>
+                        <span>{post.comments.length}</span>
                         </div>
                     </div>
                     <div className={styles.postCommentBox}>
                         <input placeholder="Start typing a comment" />
                     </div>
 
-                    <Comment/>
+                    <div className={styles.postCommentsList}>
+                        {post.comments.map((comment)=>(
+                            <Comment comment={comment}/>
+                        ))}
+                    </div>
                     
                 </div>
             </div>
